@@ -3,20 +3,22 @@
 {% block content %}
     <h1>Add a Blog Entry:</h1>
     <hr />
-    <form method='post'>
+    <form method='post' id="usrinp">
         <label>
-            Title for your new blog:<br>
+            Title for your new blog:
+            <br>
             <input type="text" name='title' />
-            <span style=color:red> {{error1}} </span>
+            <p style="color:red;"> {{error1}} </p>
         </label>
-        <br> <br>
-        <label>
+        <br> 
+        
             Your new blog: <br>
-            <input type="text" name='body' />
-            <span style=color:red> {{error2}} </span>
-        </label>
-        <br><br>
-        <input type="submit" value='Add Blog' />
+            <textarea type="text" name='body' rows="5" cols="20"></textarea>
+            <br>
+            <p style="color:red;"> {{error2}} </p>
+
+            <br><br>
+            <input type="submit" value='Add Blog' />
     </form>
 
     

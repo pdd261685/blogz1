@@ -32,12 +32,15 @@ def newpost():
     if request.method == 'POST':
         blog_title = request.form['title']
         blog_body = request.form['body']
-        if len(blog_title)==0:
+
+        if not blog_title:
             error1='Please fill in the title' 
-            # return redirect('/newpost')
-        if len(blog_body)==0:
+            
+        if  blog_body =="":
             error2='Please fill in the body'
-            # return redirect('/newpost')
+            print("Something")
+
+        test='test'    
         if not error1 and not error2:
             new_blog = Blog(blog_title,blog_body)
             db.session.add(new_blog)
@@ -45,8 +48,7 @@ def newpost():
             return redirect('/blog')     
 
     if error1 or error2:
-        # return redirect ('/newpost')   
-        return render_template('newpost.html',error1=error1,error2=error2) 
+        return render_template('newpost.html',error1=error1,error2=error2,test=test) 
 
       
 
