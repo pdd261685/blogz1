@@ -1,31 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
-    <table style="text-align:right" style="width:100%" >
-        <tr>
-            <th><h3><a href='/blog'> Main Blog Page</a> </h3></th>  
-            <th><h3>  </h3></th><th><h3>  </h3></th>
-            <th><h3>  </h3></th><th><h3>  </h3></th>
-            <th><h3>  </h3></th><th><h3>  </h3></th>
-            <th><h3>  </h3></th><th><h3>  </h3></th>
-            <th><h3> <a href='/newpost'> Add a Blog Entry </a></h3></th>
-        </tr> 
-    </table>     
-    
-    <h1 style="text-align:center"> Build a Blog</h1>
 
+<h1 style="text-align:center"> Build a Blog</h1> 
     {% if blogs|length == 0 %}
     <p>No blogs yet</p>
     {% else %}
 
         <ul>
             {% for blog in blogs %}
-            <li><a href='/blog'>{{blog.title}} </a>
-                <form method="POST" action="/delete-task" style="display:inline-block;">
+            <li><a href='/blog_dis?id={{blog.id}}'>{{blog.title}} </a>
+                <!-- <form method="POST" action="/delete-task" style="display:inline-block;">
                     <input type="hidden" name="blog-id" value="{{blog.id}}" />
                     
-                </form>
+                </form> -->
                 <br>
                 {{blog.body}}
             </li>

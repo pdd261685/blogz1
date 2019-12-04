@@ -5,8 +5,20 @@
     </head>
 <body>
 
-    {% block content %}
-    {% endblock %}
+    <table style="text-align:right" style="width:100%" >
+            <tr>
+                <th><h3><a href='/blog'> Main Blog Page</a> </h3></th>  
+                <th><h3>  </h3></th><th><h3>  </h3></th>
+                <th><h3>  </h3></th><th><h3>  </h3></th>
+                <th><h3>  </h3></th><th><h3>  </h3></th>
+                <th><h3>  </h3></th><th><h3>  </h3></th>
+                <th><h3> <a href='/newpost'> Add a Blog Entry </a></h3></th>
+            </tr> 
+        </table>     
+        
+          
+        {% block content %}
 
+        {% endblock %} 
 </body>
 </html>

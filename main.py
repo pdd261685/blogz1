@@ -38,24 +38,23 @@ def newpost():
             
         if  blog_body =="":
             error2='Please fill in the body'
-            print("Something")
-
-        test='test'    
+             
         if not error1 and not error2:
             new_blog = Blog(blog_title,blog_body)
             db.session.add(new_blog)
             db.session.commit()
             return redirect('/blog')     
 
-    if error1 or error2:
-        return render_template('newpost.html',error1=error1,error2=error2,test=test) 
+    
+    return render_template('newpost.html',error1=error1,error2=error2) 
 
-      
 
-        
-           
-          
-    return render_template('newpost.html',error1=error1,error2=error2)
+@app.route("/blog_dis", methods=['GET'])
+def blog_dis():
+    blog_id = request.args.get('id')
+    body = request.args.get('body')
+    blog_d=Blog.query.filter_by(id=blog_id).first()
+    return render_template('blog_dis.html',title=blog_d.title,body=blog_d.body)
 
 if __name__ == '__main__':
     app.run()
