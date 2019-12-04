@@ -52,7 +52,7 @@ def newpost():
 @app.route("/blog_dis", methods=['GET'])
 def blog_dis():
     blog_id = request.args.get('id')
-    body = request.args.get('body')
+    # body = request.args.get('body')
     blog_d=Blog.query.filter_by(id=blog_id).first()
     return render_template('blog_dis.html',title=blog_d.title,body=blog_d.body)
 
