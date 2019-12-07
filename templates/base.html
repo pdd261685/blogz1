@@ -2,20 +2,62 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <style>
+            nav ul {
+                    padding: 0;
+                    padding-top: 0px;
+                    padding-right: 0px;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    display: inline-block;
+                    }
+            ul {
+                    display: block;
+                    list-style-type: disc;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    padding-inline-start: 40px;
+
+                }     
+            nav ul li {
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 15px;
+                    }   
+            textarea {
+                    width: 400px;
+                    height: 200px;
+                    font-size: 17px;
+                    font-family: monospace;
+                }       
+            .titleBox
+            {
+                width: 400px;
+                font-size: 27px;
+                font-family: monospace;
+            }   
+            body{
+                padding: 50px;
+            }
+        </style>
     </head>
 <body>
 
-    <table style="text-align:right" style="width:100%" >
-            <tr>
-                <th><h3><a href='/blog'> Main Blog Page</a> </h3></th>  
-                <th><h3>  </h3></th><th><h3>  </h3></th>
-                <th><h3>  </h3></th><th><h3>  </h3></th>
-                <th><h3>  </h3></th><th><h3>  </h3></th>
-                <th><h3>  </h3></th><th><h3>  </h3></th>
-                <th><h3> <a href='/newpost'> Add a Blog Entry </a></h3></th>
-            </tr> 
-        </table>     
+        <nav >
+                <ul style="float:right";>
+                    <li><a href='/login'> Login</a></h3></th></li>
+                    <li><a href='/logout'> Logout</a></h3></th></li>
+                </ul>
         
+                <ul style="font-size: 25px">
+                    <li><a href='/'> Home</a></li>
+                    <li><a href='/blog'> All Posts </a></li>
+                    <li><a href='/newpost'> Add Post</a></li>
+                </ul>
+        
+            </nav>
           
         {% block content %}
 

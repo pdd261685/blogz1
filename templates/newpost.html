@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Add a Blog Entry:</h1>
-    <hr />
+<div style="margin-left: 20px">
+<h1> New post</h1> 
+
     <form method='post' id="usrinp">
-        <label>
-            Title for your new blog:
+        <label style="font-size: 20px">
+            Title:
             <br>
-            <input type="text" name='title' />
+            <input type="text" name='title' class="titleBox" />
             <p style="color:red;"> {{error1}} </p>
         </label>
         <br> 
-        
-            Your new blog: <br>
+        <label style="font-size: 20px">
+            Post: <br>
             <textarea type="text" name='body' rows="5" cols="20"></textarea>
             <br>
             <p style="color:red;"> {{error2}} </p>
 
-            <br><br>
-            <input type="submit" value='Add Blog' />
+            
+            <input type="submit" value='Submit' style="font-size: 20px"/>
+        </label>    
     </form>
+</div>    
 
     
 
